@@ -8,6 +8,7 @@ app = Flask(__name__)
 def hello_world():
     if request.method == 'GET':
         return render_template('forms/form_with_static.html')
+
     elif request.method == 'POST':
         kwargs = {
             'title': request.form['title'],

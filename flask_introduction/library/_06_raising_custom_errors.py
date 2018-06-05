@@ -60,12 +60,13 @@ def authors():
 
 @app.route('/author/<string:authors_last_name>')
 def author(authors_last_name):
+    # add one logic here, to help fix this bug
     if authors_last_name not in AUTHORS_INFO:
         abort(404)
     return render_template('routing/author.html',
                            author=AUTHORS_INFO[authors_last_name])
 
-
+# do not allow to edit
 @app.route('/author/<string:authors_last_name>/edit')
 def author_admin(authors_last_name):
     abort(401)

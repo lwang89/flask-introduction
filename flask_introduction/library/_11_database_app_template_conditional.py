@@ -23,3 +23,7 @@ def hello_world():
     cursor = g.db.execute('SELECT id, name FROM author;')
     authors = [dict(id=row[0], name=row[1]) for row in cursor.fetchall()]
     return render_template('database/authors_with_conditional.html', authors=authors)
+
+@app.route('/extra')
+def hulu():
+    return "I don't like it!!! want a burger!!!"

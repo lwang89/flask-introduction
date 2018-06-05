@@ -14,5 +14,5 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    library_name = "Poe"
+    library_name = "SvP Test"
     return render_template('index.html', library_name=library_name)
