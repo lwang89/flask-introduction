@@ -35,7 +35,13 @@
 </div>
 </body>
     <div style="float:bottom;">
-      <button onclick="location.href  = 'video_play'" type="button" name='submit' class="margin btn btn-success btn-lg btn-block"  value="Accept" >ACCEPT</button>
-      <!--button type="button" class="margin btn-danger btn-lg btn-block">CANCEL</button-->
+      <form role="form"  method="POST">
+
+        <input class="form-control" type="email" name="userid" id="mail_address" placeholder="E-mail Address" required>
+
+        <button type="submit" name='submit' class="margin btn btn-success btn-lg btn-block"  value="submit" >ACCEPT</button>
+        <!--button onclick="location.href  = 'video_play'" type="submit" name='submit' class="margin btn btn-success btn-lg btn-block"  value="Accept" >ACCEPT</button>
+        <!--button type="button" class="margin btn-danger btn-lg btn-block">CANCEL</button-->
+      </form>
     </div>
 {% endblock %}

@@ -1,8 +1,27 @@
 {% extends "inheritance/basic_new.html" %}
 
 {% block content %}
-TODO:<br>
-    Add two choices for participant to choose: Spontaneous and Deliberate. They can only choose once.<br>
-    Once they clicked it, we save the results to list, and jump to "rest" page.
-    If all videos finished, jump to "successfully_finish" page, and save results to our database
+
+    <h1>What Do You Think About Previous Video: </h1>
+
+
+    <form  role="form"  method="POST">
+        <fieldset class="form-group">
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="Spontaneous" checked>
+                    Spontaneous
+                </label>
+            </div>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="Deliberate">
+                    Deliberate
+                </label>
+            </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 {% endblock %}
