@@ -88,7 +88,7 @@ def rest():
         else:
             rest_time = 1
         if COUNTER == TOTAL_VIDEO_NUMBER:
-            return render_template('inheritance/successfully_finish.html')
+            return render_template('inheritance/finish.html')
         else:
             return render_template('inheritance/rest.html', Rest_time = rest_time, count_number = 5 )
 
@@ -102,6 +102,14 @@ def quit():
         reset_data()
         return render_template('inheritance/quit.html')
 
+@app.route('/finish', methods=['POST', 'GET'])
+def finish():
+    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME
+    if request.method == 'GET':
+        # TODO: save userid, video_list and results to JSON file
+        save_to_json()
+        reset_data()
+        return render_template('inheritance/finish.html')
 
 def initial_data():
     global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME
@@ -109,6 +117,14 @@ def initial_data():
     # to clean the data
     ACTUAL_RESULTS = {}
     COUNTER = 0
+
+def save_to_json():
+    # TODO: use the right format to save
+    # 1. userid
+    # 2. video play list (or maybe dict Actual results is okay?)
+    # 3. accuracy
+
+    print("save to local json file")
 
 # reset the global variables when we quit or finishing the test
 def reset_data():
