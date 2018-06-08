@@ -3,6 +3,7 @@ import sqlite3
 from . import config
 import os
 import random
+import json
 import glob
 import cv2
 
@@ -85,8 +86,8 @@ def submit():
         video_name = VIDEOLIST[COUNTER]
         video_result = request.form.getlist('gridRadios')
         print(video_result)
-        ACTUAL_RESULTS[video_name] = video_result
-        print (ACTUAL_RESULTS)
+        ACTUAL_RESULTS[video_name] = video_result[0]
+        print (len(ACTUAL_RESULTS))
         COUNTER += 1
 
         return redirect(url_for('rest'))
@@ -100,7 +101,7 @@ def rest():
         else:
             rest_time = 1
         if COUNTER == TOTAL_VIDEO_NUMBER:
-            return render_template('inheritance/finish.html')
+            return redirect(url_for('finish'))
         else:
             return render_template('inheritance/rest.html', Rest_time = rest_time, count_number = COUNTER )
 
@@ -110,7 +111,6 @@ def rest():
 def quit():
     global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME
     if request.method == 'GET':
-        # TODO: reset all global variables
         reset_data()
         return render_template('inheritance/quit.html')
 
@@ -132,10 +132,29 @@ def initial_data():
 
 
 def save_to_json():
+    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME
     # TODO: use the right format to save
     # 1. userid
-    # 2. video play list (or maybe dict Actual results is okay?)
+    # 2. ACTUAL_RESULTS
     # 3. accuracy
+    right_answers = 0
+    print(ACTUAL_RESULTS)
+    for key, value in ACTUAL_RESULTS.items():
+        if value in key:
+            right_answers += 1
+    accuracy = right_answers / len(ACTUAL_RESULTS)
+
+    data = {}
+    data[USERID] = []
+    data[USERID].append(ACTUAL_RESULTS)
+    data[USERID].append({'accuracy' : accuracy})
+    accuracy_json = {}
+    accuracy_json[USERID] = accuracy
+
+    with open('smile_results.txt', 'a') as outfile:
+        json.dump(data, outfile)
+    with open('smile_accuracy.txt', 'a') as accuracy_file:
+        json.dump(accuracy_json, accuracy_file)
 
     print("save to local json file")
 

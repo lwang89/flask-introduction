@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e436a2c9-a9f6-4cf9-99dd-b7fd700a4d55" name="Default" comment="" />
+    <list default="true" id="e436a2c9-a9f6-4cf9-99dd-b7fd700a4d55" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/flask_introduction/sample_json.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/flask_introduction/smile_accuracy.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/flask_introduction/smile_results.txt" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/_01_simple.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/_02_html_inside_view.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/_03_template_str_inside_view.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/_04_template_outside_view.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/_05_basic_routing.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/_06_raising_custom_errors.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/_07_request_info.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/_08_redirects.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/_09_simple_database_app.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/_10_database_app_template_eng.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/_11_database_app_template_conditional.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/_12_database_app_with_join.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/_13_simple_form_submission.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/_14_static_files.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/_15_template_inheritance.py" afterPath="$PROJECT_DIR$/flask_introduction/library/smile_feedback_system.py" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/static/image/Boston.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/templates/database/authors.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/templates/database/authors_template_engine.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/templates/database/authors_with_conditional.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/templates/database/authors_with_join.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/templates/forms/basic_form.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/templates/forms/basic_form_result.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/templates/forms/form_with_static.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/templates/inheritance/base.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/templates/inheritance/child_template_form.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/library/templates/inheritance/rest.html" afterPath="$PROJECT_DIR$/flask_introduction/library/templates/inheritance/rest.html" />
+      <change beforePath="$PROJECT_DIR$/flask_introduction/run_app.py" afterPath="$PROJECT_DIR$/flask_introduction/run_app.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +58,33 @@
     <splitter split-orientation="horizontal" split-proportion="0.5380543">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="_15_template_inheritance.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/flask_introduction/library/_15_template_inheritance.py">
+          <file leaf-file-name="run_app.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/flask_introduction/run_app.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="371">
-                  <caret line="100" column="25" lean-forward="true" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+                <state relative-caret-position="135">
+                  <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#9#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="375">
+                  <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="smile_feedback_system.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/flask_introduction/library/smile_feedback_system.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="642">
+                  <caret line="151" column="36" lean-forward="false" selection-start-line="151" selection-start-column="36" selection-end-line="151" selection-end-column="36" />
                   <folding>
                     <element signature="e#0#68#0" expanded="true" />
                   </folding>
@@ -42,6 +97,16 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="390">
                   <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index_start.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/flask_introduction/library/templates/inheritance/index_start.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="324">
+                  <caret line="39" column="46" lean-forward="false" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
                   <folding />
                 </state>
               </provider>
@@ -60,9 +125,11 @@
           <file leaf-file-name="rest.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/flask_introduction/library/templates/inheritance/rest.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-                  <folding />
+                <state relative-caret-position="307">
+                  <caret line="26" column="21" lean-forward="false" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+                  <folding>
+                    <element signature="e#489#506#0#HTML" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -81,68 +148,14 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="authors_template_engine.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/flask_introduction/library/templates/database/authors_template_engine.html">
+          <file leaf-file-name="run_app.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/flask_introduction/run_app.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_10_database_app_template_eng.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/flask_introduction/library/_10_database_app_template_eng.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state relative-caret-position="135">
+                  <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
                   <folding>
-                    <marker date="1527968814573" expanded="true" signature="385:412" ph="SELECT id, n... author" />
+                    <element signature="e#0#9#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_13_simple_form_submission.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/flask_introduction/library/_13_simple_form_submission.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="12" column="43" lean-forward="false" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_12_database_app_with_join.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/flask_introduction/library/_12_database_app_with_join.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-                  <folding>
-                    <marker date="1527968814573" expanded="true" signature="396:489" ph="SELECT a.id,... author" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_11_database_app_template_conditional.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/flask_introduction/library/_11_database_app_template_conditional.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-                  <folding>
-                    <marker date="1527991865734" expanded="true" signature="385:412" ph="SELECT id, n... author" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="basic_form_result.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/flask_introduction/library/templates/forms/basic_form_result.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -182,7 +195,6 @@
         <option value="$PROJECT_DIR$/flask_introduction/library/templates/database/authors_with_conditional.html" />
         <option value="$PROJECT_DIR$/flask_introduction/library/_11_database_app_template_conditional.py" />
         <option value="$PROJECT_DIR$/flask_introduction/library/_14_static_files.py" />
-        <option value="$PROJECT_DIR$/flask_introduction/run_app.py" />
         <option value="$PROJECT_DIR$/flask_introduction/library/templates/inheritance/index_new.html" />
         <option value="$PROJECT_DIR$/flask_introduction/library/templates/inheritance/video_play.html" />
         <option value="$PROJECT_DIR$/flask_introduction/library/templates/inheritance/basic_new.html" />
@@ -190,8 +202,10 @@
         <option value="$PROJECT_DIR$/flask_introduction/library/templates/inheritance/index_start.html" />
         <option value="$PROJECT_DIR$/flask_introduction/library/templates/inheritance/successfully_finish.html" />
         <option value="$PROJECT_DIR$/flask_introduction/library/templates/inheritance/results_submit.html" />
-        <option value="$PROJECT_DIR$/flask_introduction/library/templates/inheritance/rest.html" />
         <option value="$PROJECT_DIR$/flask_introduction/library/_15_template_inheritance.py" />
+        <option value="$PROJECT_DIR$/flask_introduction/library/templates/inheritance/rest.html" />
+        <option value="$PROJECT_DIR$/flask_introduction/run_app.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -272,14 +286,6 @@
               <item name="flask_introduction" type="462c0819:PsiDirectoryNode" />
               <item name="library" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flask-introduction" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flask-introduction" type="462c0819:PsiDirectoryNode" />
-              <item name="flask_introduction" type="462c0819:PsiDirectoryNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="video" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -288,14 +294,6 @@
               <item name="flask_introduction" type="462c0819:PsiDirectoryNode" />
               <item name="library" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flask-introduction" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flask-introduction" type="462c0819:PsiDirectoryNode" />
-              <item name="flask_introduction" type="462c0819:PsiDirectoryNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flask-introduction" type="b2602c69:ProjectViewProjectNode" />
@@ -380,6 +378,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19540843" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39932886" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -389,7 +388,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -423,12 +421,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/flask_introduction/library/_06_raising_custom_errors.py</url>
-          <line>71</line>
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="1" />
     </breakpoint-manager>
     <watches-manager />
@@ -439,7 +431,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="false" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -480,9 +472,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#255#278#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -522,9 +512,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="37" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="37" />
-          <folding>
-            <element signature="e#327#376#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -560,16 +548,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flask_introduction/run_app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flask_introduction/library/templates/inheritance/child_template_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -590,9 +568,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1527968814573" expanded="true" signature="385:412" ph="SELECT id, n... author" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -624,9 +600,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding>
-            <marker date="1527968814573" expanded="true" signature="396:489" ph="SELECT a.id,... author" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -634,9 +608,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <marker date="1527991865734" expanded="true" signature="385:412" ph="SELECT id, n... author" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -669,9 +641,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <marker date="1527968814573" expanded="true" signature="514:541" ph="SELECT id, n... author" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -695,9 +665,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="34" lean-forward="false" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -724,28 +692,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flask_introduction/library/templates/inheritance/index_start.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="12" lean-forward="false" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
-          <folding>
-            <element signature="e#1167#1188#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flask_introduction/library/templates/inheritance/quit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="0" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask_introduction/library/templates/inheritance/finish.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -758,10 +708,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/flask_introduction/sample_json.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask_introduction/smile_results.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/flask_introduction/library/templates/database/authors_template_engine.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask_introduction/library/templates/inheritance/finish.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask_introduction/library/templates/inheritance/index_start.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="39" column="46" lean-forward="false" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -776,19 +758,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/flask_introduction/library/templates/inheritance/rest.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="307">
+          <caret line="26" column="21" lean-forward="false" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+          <folding>
+            <element signature="e#489#506#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flask_introduction/library/_15_template_inheritance.py">
+    <entry file="file://$PROJECT_DIR$/flask_introduction/library/smile_feedback_system.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="100" column="25" lean-forward="true" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+        <state relative-caret-position="642">
+          <caret line="151" column="36" lean-forward="false" selection-start-line="151" selection-start-column="36" selection-end-line="151" selection-end-column="36" />
           <folding>
             <element signature="e#0#68#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask_introduction/run_app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -3,11 +3,35 @@
 {% block content %}
 
     <h1>You Have Watched {{ count_number }} Videos</h1>
-    <h1>You Have Totally {{ Rest_time }} Seconds to rest</h1>
-    <script>
-        var timer = setTimeout(function () {
-            window.location='http://0.0.0.0:8080/video_play'
-        },{{ Rest_time * 1000 }})
-    </script>
+    <h1 >You Have Totally {{ Rest_time }} Seconds to Rest</h1>
+
+    <form name="redirect">
+        <center>
+            <font face="Arial"><b>You Will Be Redirected to Watch Video in<br><br>
+                <form>
+                    <!--button type="submit" name="redirect2" class="btn btn-primary"-->
+                    <input type="text" size="3" name="redirect2" style="color:red">
+                </form>
+                Seconds</b></font>
+        </center>
+
+        <script>
+            var targetURL="http://0.0.0.0:8080/video_play"
+            var countdownfrom= {{ Rest_time }}
+            var currentsecond=document.redirect.redirect2.value=countdownfrom+1
+            function countredirect(){
+                if (currentsecond !=1 ){
+                    currentsecond -= 1
+                    document.redirect.redirect2.value=currentsecond
+                }
+                else{
+                    document.redirect.redirect2.value=currentsecond
+                    window.location=targetURL
+                    return
+                }
+                setTimeout("countredirect()",1000)
+            }
+            countredirect()
+        </script>
 
 {% endblock %}
