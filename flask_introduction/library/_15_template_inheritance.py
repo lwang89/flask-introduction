@@ -2,6 +2,8 @@ from flask import Flask, request, render_template, redirect, url_for
 import sqlite3
 from . import config
 import os
+import random
+import glob
 import cv2
 
 
@@ -28,6 +30,7 @@ APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 def hello_world():
     global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME
     if request.method == 'GET':
+        # load_video_list()
 
         return render_template('inheritance/index_start.html')
 
@@ -36,7 +39,6 @@ def hello_world():
         USERID = request.form['userid']
         print(USERID)
         if USERID != '':
-            # TODO: initial dataL generate a video play list and clean two global variables: ACTUAL_RESULTS and COUNTER
             initial_data()
             return redirect(url_for('video_play'))
         else:
@@ -50,9 +52,17 @@ def video_play():
     if request.method == 'GET':
 
         # TODO: load right video after we generate a play list
-        test_filename = '/static/video/001_deliberate_smile_2.mp4'
-        print(test_filename)
-        return render_template('inheritance/video_play.html', file_path = test_filename)
+        base_path = '/static/video/'
+        temp_video_name = VIDEOLIST[COUNTER]
+
+        if 'spontaneous' in temp_video_name:
+            video_path = base_path + 'spontaneous/' + temp_video_name
+        else:
+            video_path = base_path + 'deliberate/' + temp_video_name
+        # test_filename = '/static/video/deliberate/002_deliberate_smile_1.mp4'
+        print(video_path)
+
+        return render_template('inheritance/video_play.html', file_path = video_path)
 
     # elif request.method == 'POST':
     #
@@ -72,9 +82,11 @@ def submit():
 
         # Save results to the dict
 
-        # video_name = VIDEOLIST[COUNTER]
-        # video_result = request.form.getlist('gridRadios')
-        # ACTUAL_RESULTS[video_name] = video_result
+        video_name = VIDEOLIST[COUNTER]
+        video_result = request.form.getlist('gridRadios')
+        print(video_result)
+        ACTUAL_RESULTS[video_name] = video_result
+        print (ACTUAL_RESULTS)
         COUNTER += 1
 
         return redirect(url_for('rest'))
@@ -90,7 +102,7 @@ def rest():
         if COUNTER == TOTAL_VIDEO_NUMBER:
             return render_template('inheritance/finish.html')
         else:
-            return render_template('inheritance/rest.html', Rest_time = rest_time, count_number = 5 )
+            return render_template('inheritance/rest.html', Rest_time = rest_time, count_number = COUNTER )
 
 
 
@@ -113,10 +125,11 @@ def finish():
 
 def initial_data():
     global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME
-    load_video_list()
-    # to clean the data
+
     ACTUAL_RESULTS = {}
     COUNTER = 0
+    load_video_list()
+
 
 def save_to_json():
     # TODO: use the right format to save
@@ -138,4 +151,50 @@ def reset_data():
 def load_video_list():
     global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME
     # TODO: add logic to load right video list to global variable VIDEOLIST
-    print("load ")
+    # TODO: generate a videoList with half TOTAL_VIDEO_NUMBER spontaneous and half TOTAL_VIDEO_NUMBER deliberate
+    # TODO: randomly play them
+
+    # we need absolute path here
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    spon_list_path = BASE_DIR + '/static/video/spontaneous/'
+    deli_list_path = BASE_DIR + '/static/video/deliberate/'
+    spon_all_files = os.listdir(spon_list_path)
+    deli_all_files = os.listdir(deli_list_path)
+    total_all_files = spon_all_files + deli_all_files
+    spon_counter = 0
+    deli_counter = 0
+
+    random_spon_video_list = []
+    random_deli_video_list = []
+
+    while (spon_counter < (TOTAL_VIDEO_NUMBER/2)):
+        new_spon_video = random.choice(spon_all_files)
+
+        if len(random_spon_video_list) == 0:
+            random_spon_video_list.append(new_spon_video)
+            spon_counter += 1
+        else:
+            if any (new_spon_video[:3] in spon_video for spon_video in random_spon_video_list):
+                continue
+            else:
+                random_spon_video_list.append(new_spon_video)
+                spon_counter += 1
+
+    while (deli_counter < (TOTAL_VIDEO_NUMBER/2)):
+        new_deli_video = random.choice(deli_all_files)
+
+        if len(random_deli_video_list) == 0:
+            random_deli_video_list.append(new_deli_video)
+            deli_counter += 1
+        else:
+            if any (new_deli_video[:3] in deli_video for deli_video in random_deli_video_list):
+                continue
+            else:
+                random_deli_video_list.append(new_deli_video)
+                deli_counter += 1
+
+    random_all_video_list = random_deli_video_list + random_spon_video_list
+    random.shuffle(random_all_video_list)
+    VIDEOLIST = random_all_video_list
+    print(VIDEOLIST)
+    print(len(VIDEOLIST))
