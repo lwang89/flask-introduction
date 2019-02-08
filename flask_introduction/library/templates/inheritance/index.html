@@ -1,6 +1,6 @@
 {% extends "inheritance/basic_new.html" %}
 {% block content %}
-<body>
+<!--body>
 <nav id="navbar_1" class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">PLEASE READ</a>
   <ul class="nav nav-pills">
@@ -33,15 +33,40 @@
   <h4 id="three">three</h4>
   <p>...</p>
 </div>
-</body>
-    <div style="float:bottom;">
+</body-->
+    <div>
       <form role="form"  method="POST">
 
-        <input class="form-control" type="email" name="userid" id="mail_address" placeholder="E-mail Address" required>
+        <input class="form-control" type="text" name="userid" id="mail_address" placeholder="User id, please input the number you are arranged" required>
+        <input class="form-control" type="text" name="age" id="age" placeholder="Age" required>
+
+        <fieldset class="form-group">
+
+            <div class="checkbox-inline">
+                <label class="form-check-label">
+                    <input class="form-check-input " required type="radio" name="gridRadios" id="gridRadios1" value="male">
+                    Male
+                </label>
+            </div>
+
+            <div class="checkbox-inline">
+                <label class="form-check-label">
+                    <input class="form-check-input" required type="radio" name="gridRadios" id="gridRadios2" value="female">
+                    Female
+                </label>
+            </div>
+        </fieldset>
+
+
 
         <button type="submit" name='submit' class="margin btn btn-success btn-lg btn-block"  value="submit" >ACCEPT</button>
         <!--button onclick="location.href  = 'video_play'" type="submit" name='submit' class="margin btn btn-success btn-lg btn-block"  value="Accept" >ACCEPT</button>
         <!--button type="button" class="margin btn-danger btn-lg btn-block">CANCEL</button-->
+
+
       </form>
+
+
+
     </div>
 {% endblock %}

@@ -2,26 +2,29 @@
 
 {% block content %}
 
-    <h1>What Do You Think About Previous Video: </h1>
+    <h1>Was that smile: </h1>
 
 
     <form  role="form"  method="POST">
         <fieldset class="form-group">
-            <div class="form-check">
+            <div class="checkbox-inline">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="spontaneous" checked>
-                    Spontaneous
+                    <input class="form-check-input" required type="radio" name="gridRadios" id="gridRadios1" value="spontaneous">
+                    real
                 </label>
             </div>
 
-            <div class="form-check">
+            <div class="checkbox-inline">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="deliberate">
-                    Deliberate
+                    <input class="form-check-input" required type="radio" name="gridRadios" id="gridRadios2" value="deliberate">
+                    fake
                 </label>
             </div>
         </fieldset>
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
+
+
 {% endblock %}

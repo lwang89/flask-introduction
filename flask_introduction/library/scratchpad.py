@@ -4,55 +4,71 @@ from . import config
 import os
 import random
 import json
-import glob
-import cv2
 
 
 app = Flask(__name__)
 
-# TODO: we use global varibles to do simple session management:
-# 1. username or user e-mail address as primary key;
-# 2. videos play-list (maybe a list);
-# 3. actual result-list (maybe a dictionary);
-USERID =''
+
+USERID = ''
+AGE = ''
+GENDER = ''
 VIDEOLIST = []
 ACTUAL_RESULTS = {}
 COUNTER = 0
 REST_NUMBER = 20
-REST_TIME = 60
+REST_TIME = 45
 TOTAL_VIDEO_NUMBER = 60
 
-# TODO: we clean above global varibles when we click "quit" or jump to "successfully_finish"
+# TODO: need to add new global variables for ScratchPad.
+# TODO: USERID, AGE, GENDER, TPOIC, SUBTOPICS, and so on.
+
 def connect_db():
     return sqlite3.connect(config.DATABASE_NAME)
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 @app.route('/', methods=['POST', 'GET'])
 def hello_world():
-    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME
+    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME, AGE, GENDER
     if request.method == 'GET':
         # load_video_list()
 
-        return render_template('inheritance/index_start.html')
+        return render_template('inheritance/index.html')
 
     elif request.method == 'POST':
 
         USERID = request.form['userid']
         print(USERID)
-        if USERID != '':
+        AGE = request.form['age']
+        print(AGE)
+        GENDER = request.form.getlist('gridRadios')
+        print(GENDER)
+        if USERID != '' and AGE != '' and GENDER != '':
             initial_data()
-            return redirect(url_for('video_play'))
+            return redirect(url_for('start'))
         else:
-            return render_template('inheritance/index_start.html')
+            return render_template('inheritance/index.html')
         # return render_template('inheritance/video_play.html')
 
+@app.route('/start', methods=['POST', 'GET'])
+def start():
+    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME, AGE, GENDER
+    if request.method == 'GET':
+        return render_template('inheritance/start.html')
+
+
+@app.route('/task1_intro', methods=['POST', 'GET'])
+def task1_intro():
+    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME, AGE, GENDER
+    if request.method == 'GET':
+        return render_template('inheritance/task1_intro.html')
+
+## We won't use the functions and related pages below
 
 @app.route('/video_play', methods=['POST', 'GET'])
 def video_play():
-    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME
+    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME, AGE, GENDER
     if request.method == 'GET':
 
-        # TODO: load right video after we generate a play list
         base_path = '/static/video/'
         temp_video_name = VIDEOLIST[COUNTER]
 
@@ -74,7 +90,7 @@ def video_play():
 
 @app.route('/results_submit', methods=['POST', 'GET'])
 def submit():
-    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME
+    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME, AGE, GENDER
     if request.method == 'GET':
 
         return render_template('inheritance/results_submit.html')
@@ -94,7 +110,7 @@ def submit():
 
 @app.route('/rest', methods=['POST', 'GET'])
 def rest():
-    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME
+    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME, AGE, GENDER
     if request.method == 'GET':
         if COUNTER % REST_NUMBER == 0:
             rest_time = REST_TIME
@@ -109,22 +125,21 @@ def rest():
 
 @app.route('/quit', methods=['POST', 'GET'])
 def quit():
-    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME
+    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME, AGE, GENDER
     if request.method == 'GET':
         reset_data()
         return render_template('inheritance/quit.html')
 
 @app.route('/finish', methods=['POST', 'GET'])
 def finish():
-    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME
+    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME, AGE, GENDER
     if request.method == 'GET':
-        # TODO: save userid, video_list and results to JSON file
         save_to_json()
         reset_data()
         return render_template('inheritance/finish.html')
 
 def initial_data():
-    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME
+    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME, AGE, GENDER
 
     ACTUAL_RESULTS = {}
     COUNTER = 0
@@ -132,11 +147,12 @@ def initial_data():
 
 
 def save_to_json():
-    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME
-    # TODO: use the right format to save
+    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME, AGE, GENDER
     # 1. userid
     # 2. ACTUAL_RESULTS
     # 3. accuracy
+    # 4. age
+    # 5. gender
     right_answers = 0
     print(ACTUAL_RESULTS)
     for key, value in ACTUAL_RESULTS.items():
@@ -148,6 +164,8 @@ def save_to_json():
     data[USERID] = []
     data[USERID].append(ACTUAL_RESULTS)
     data[USERID].append({'accuracy' : accuracy})
+    data[USERID].append({'Age': AGE})
+    data[USERID].append({'Gender': GENDER})
     accuracy_json = {}
     accuracy_json[USERID] = accuracy
 
@@ -160,18 +178,17 @@ def save_to_json():
 
 # reset the global variables when we quit or finishing the test
 def reset_data():
-    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME
+    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME, AGE, GENDER
 
     USERID = ''
+    AGE = ''
+    GENDER = ''
     VIDEOLIST = []
     ACTUAL_RESULTS = {}
     COUNTER = 0
 
 def load_video_list():
-    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME
-    # TODO: add logic to load right video list to global variable VIDEOLIST
-    # TODO: generate a videoList with half TOTAL_VIDEO_NUMBER spontaneous and half TOTAL_VIDEO_NUMBER deliberate
-    # TODO: randomly play them
+    global VIDEOLIST, USERID, ACTUAL_RESULTS, COUNTER, REST_NUMBER, TOTAL_VIDEO_NUMBER, REST_TIME, AGE, GENDER
 
     # we need absolute path here
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -215,5 +232,5 @@ def load_video_list():
     random_all_video_list = random_deli_video_list + random_spon_video_list
     random.shuffle(random_all_video_list)
     VIDEOLIST = random_all_video_list
-    print(VIDEOLIST)
-    print(len(VIDEOLIST))
+    # print(VIDEOLIST)
+    # print(len(VIDEOLIST))

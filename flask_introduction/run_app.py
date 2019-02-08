@@ -1,5 +1,5 @@
 import os
-from library.smile_feedback_system import app
+from library.scratchpad import app
 
 
 if __name__ == '__main__':
